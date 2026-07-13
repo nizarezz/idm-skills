@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide des Compétences IDM — Industrie du Maroc</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.5;
+            color: #333333;
+            background: #FFFFFF;
+        }
+        
+        /* Cover Page */
+        .cover-page {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #003366 0%, #0066CC 100%);
+            color: #FFFFFF;
+            padding: 3cm;
+            page-break-after: always;
+        }
+        
+        .cover-logo {
+            font-size: 14pt;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2cm;
+            opacity: 0.9;
+        }
+        
+        .cover-title {
+            font-size: 32pt;
+            font-weight: 700;
+            margin-bottom: 0.5cm;
+            line-height: 1.2;
+        }
+        
+        .cover-subtitle {
+            font-size: 16pt;
+            font-weight: 300;
+            margin-bottom: 2cm;
+            opacity: 0.9;
+        }
+        
+        .cover-divider {
+            width: 100px;
+            height: 3px;
+            background: #CC9900;
+            margin: 1cm auto;
+        }
+        
+        .cover-date {
+            font-size: 12pt;
+            opacity: 0.8;
+        }
+        
+        .cover-footer {
+            position: absolute;
+            bottom: 2cm;
+            font-size: 10pt;
+            opacity: 0.7;
+        }
+        
+        /* Table of Contents */
+        .toc-page {
+            padding: 2.5cm;
+            page-break-after: always;
+        }
+        
+        .toc-title {
+            font-size: 20pt;
+            color: #003366;
+            margin-bottom: 1cm;
+            padding-bottom: 0.3cm;
+            border-bottom: 3px solid #CC9900;
+        }
+        
+        .toc-section {
+            margin-bottom: 0.8cm;
+        }
+        
+        .toc-section-title {
+            font-size: 12pt;
+            font-weight: 600;
+            color: #003366;
+            margin-bottom: 0.3cm;
+        }
+        
+        .toc-item {
+            font-size: 10pt;
+            color: #666666;
+            padding-left: 0.5cm;
+            margin-bottom: 0.2cm;
+        }
+        
+        /* Content Pages */
+        .content-page {
+            padding: 2.5cm;
+            page-break-after: always;
+        }
+        
+        .page-header {
+            font-size: 8pt;
+            color: #999999;
+            text-align: right;
+            margin-bottom: 1cm;
+            padding-bottom: 0.3cm;
+            border-bottom: 1px solid #E5E5E5;
+        }
+        
+        .section-title {
+            font-size: 20pt;
+            color: #003366;
+            margin-bottom: 0.8cm;
+            padding-bottom: 0.3cm;
+            border-bottom: 3px solid #CC9900;
+        }
+        
+        .subsection-title {
+            font-size: 14pt;
+            color: #0066CC;
+            margin: 1cm 0 0.5cm 0;
+        }
+        
+        .content-block {
+            margin-bottom: 1cm;
+        }
+        
+        .label {
+            font-weight: 600;
+            color: #003366;
+            display: block;
+            margin-bottom: 0.2cm;
+            font-size: 10pt;
+        }
+        
+        .text {
+            font-size: 10.5pt;
+            line-height: 1.6;
+            color: #333333;
+        }
+        
+        .example-box {
+            background: #F5F5F5;
+            border-left: 4px solid #0066CC;
+            padding: 0.5cm;
+            margin: 0.5cm 0;
+            font-size: 9.5pt;
+        }
+        
+        .example-label {
+            font-size: 9pt;
+            font-weight: 600;
+            color: #0066CC;
+            text-transform: uppercase;
+            margin-bottom: 0.2cm;
+        }
+        
+        ul {
+            margin: 0.3cm 0;
+            padding-left: 0.8cm;
+        }
+        
+        li {
+            margin-bottom: 0.2cm;
+            font-size: 10pt;
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.5cm 0;
+            font-size: 9.5pt;
+        }
+        
+        th {
+            background: #003366;
+            color: #FFFFFF;
+            padding: 0.3cm 0.4cm;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 0.25cm 0.4cm;
+            border-bottom: 1px solid #E5E5E5;
+        }
+        
+        tr:nth-child(even) {
+            background: #F9F9F9;
+        }
+        
+        /* Quick Reference Table */
+        .quick-ref-table th {
+            background: #0066CC;
+        }
+        
+        .quick-ref-table td:first-child {
+            font-weight: 600;
+            color: #003366;
+        }
+        
+        /* Workflow Boxes */
+        .workflow-box {
+            background: #F5F5F5;
+            border: 1px solid #E5E5E5;
+            border-radius: 4px;
+            padding: 0.5cm;
+            margin: 0.5cm 0;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 9pt;
+            line-height: 1.8;
+        }
+        
+        .workflow-step {
+            color: #003366;
+            font-weight: 600;
+        }
+        
+        .workflow-arrow {
+            color: #CC9900;
+            font-weight: 700;
+        }
+        
+        /* Sources Table */
+        .sources-table td:first-child {
+            font-weight: 600;
+            color: #003366;
+        }
+        
+        .sources-table td:last-child {
+            font-family: 'Consolas', monospace;
+            font-size: 8.5pt;
+            color: #0066CC;
+        }
+        
+        /* Footer */
+        .page-footer {
+            position: fixed;
+            bottom: 2cm;
+            left: 2.5cm;
+            right: 2.5cm;
+            font-size: 8pt;
+            color: #999999;
+            text-align: center;
+            border-top: 1px solid #E5E5E5;
+            padding-top: 0.3cm;
+        }
+        
+        /* Gold Accent */
+        .gold-accent {
+            color: #CC9900;
+            font-weight: 600;
+        }
+        
+        /* Print Optimization */
+        @media print {
+            .cover-page {
+                page-break-after: always;
+            }
+            
+            .content-page {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover-page">
+    <div class="cover-logo">Industrie du Maroc</div>
+    <div class="cover-title">Guide des Compétences</div>
+    <div class="cover-subtitle">Comment et quand utiliser les compétences de journalisme industriel</div>
+    <div class="cover-divider"></div>
+    <div class="cover-date">Version 1.0.0 — 13 juillet 2026</div>
+    <div class="cover-footer">Industrie du Maroc Magazine • industriedumaroc.com</div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc-page">
+    <div class="toc-title">Table des matières</div>
+    
+    <div class="toc-section">
+        <div class="toc-section-title">Comment ça marche</div>
+        <div class="toc-item">Processus en 4 étapes</div>
+    </div>
+    
+    <div class="toc-section">
+        <div class="toc-section-title">Référence rapide</div>
+        <div class="toc-item">Tableau des 14 compétences</div>
+    </div>
+    
+    <div class="toc-section">
+        <div class="toc-section-title">Compétences éditoriales (8)</div>
+        <div class="toc-item">1. Fact Checker</div>
+        <div class="toc-item">2. Source Verification</div>
+        <div class="toc-item">3. AI Writing Detox</div>
+        <div class="toc-item">4. Newsroom Style</div>
+        <div class="toc-item">5. Story Angle Finder</div>
+        <div class="toc-item">6. Article Builder</div>
+        <div class="toc-item">7. Interview Prep</div>
+        <div class="toc-item">8. Pre-Publication Review</div>
+    </div>
+    
+    <div class="toc-section">
+        <div class="toc-section-title">Outils employés (5)</div>
+        <div class="toc-item">9. Newsletter Builder</div>
+        <div class="toc-item">10. Content Repurposer</div>
+        <div class="toc-item">11. Social Media Publisher</div>
+        <div class="toc-item">12. Press Release Analyzer</div>
+        <div class="toc-item">13. Editorial Translation</div>
+    </div>
+    
+    <div class="toc-section">
+        <div class="toc-section-title">Production (1)</div>
+        <div class="toc-item">14. PDF Media Kit Builder</div>
+    </div>
+    
+    <div class="toc-section">
+        <div class="toc-section-title">Annexes</div>
+        <div class="toc-item">Workflows combinés</div>
+        <div class="toc-item">Sources de données marocaines</div>
+    </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="content-page">
+    <div class="page-header">Guide des Compétences IDM</div>
+    
+    <div class="section-title">Comment ça marche</div>
+    
+    <div class="content-block">
+        <div class="text">
+            Aucune compétence technique requise. Il suffit de connaître le lien du dépôt GitHub et de poser une question à l'IA.
+        </div>
+    </div>
+    
+    <div class="content-block">
+        <div class="label">Le processus en 4 étapes</div>
+        <ol style="padding-left: 0.8cm;">
+            <li><strong>Dites à l'IA:</strong> « Utilise la compétence [nom] depuis github.com/nizarezz/idm-skills »</li>
+            <li><strong>L'IA récupère</strong> automatiquement la compétence depuis le dépôt</li>
+            <li><strong>L'IA applique</strong> les instructions à votre travail</li>
+            <li><strong>Vous recevez</strong> une sortie structurée et professionnelle</li>
+        </ol>
+    </div>
+    
+    <div class="example-box">
+        <div class="example-label">Exemple concret</div>
+        <div class="text" style="font-style: italic;">
+            « Utilise le fact-checker depuis github.com/nizarezz/idm-skills pour vérifier cette affirmation: Renault Tangier a produit 300 000 véhicules au premier trimestre 2025 »
+        </div>
+    </div>
+    
+    <div class="section-title" style="margin-top: 1.5cm;">Référence rapide</div>
+    
+    <table class="quick-ref-table">
+        <thead>
+            <tr>
+                <th style="width: 40%;">Compétence</th>
+                <th>Quand l'utiliser</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Fact Checker</td><td>Vérifier une affirmation avant publication</td></tr>
+            <tr><td>Source Verification</td><td>Évaluer la crédibilité d'une source</td></tr>
+            <tr><td>AI Writing Detox</td><td>Nettoyer un texte généré par IA</td></tr>
+            <tr><td>Newsroom Style</td><td>Appliquer le style éditorial IDM</td></tr>
+            <tr><td>Story Angle Finder</td><td>Trouver des angles pour un sujet</td></tr>
+            <tr><td>Article Builder</td><td>Construire un article structuré</td></tr>
+            <tr><td>Interview Prep</td><td>Préparer une interview d'industriel</td></tr>
+            <tr><td>Pre-Publication Review</td><td>Revue finale avant publication</td></tr>
+            <tr><td>Newsletter Builder</td><td>Créer une newsletter B2B</td></tr>
+            <tr><td>Content Repurposer</td><td>Transformer un article en formats multiples</td></tr>
+            <tr><td>Social Media Publisher</td><td>Créer du contenu LinkedIn/Twitter/Instagram</td></tr>
+            <tr><td>Press Release Analyzer</td><td>Analyser un communiqué de presse</td></tr>
+            <tr><td>Editorial Translation</td><td>Traduire en français/arabe/anglais</td></tr>
+            <tr><td>PDF Media Kit Builder</td><td>Créer des documents PDF professionnels</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- FACT CHECKER -->
+<div class="content-page">
+    <div class="page-header">Guide des Compétences IDM — Compétences éditoriales</div>
+    
+    <div class="section-title">1. Fact Checker</div>
+    
+    <div class="content-block">
+        <div class="label">À quoi ça sert</div>
+        <div class="text">Vérifier systématiquement les affirmations factuelles avant publication.</div>
+    </div>
+    
+    <div class="content-block">
+        <div class="label">Quand l'utiliser</div>
+        <ul>
+            <li>Avant de publier un article contenant des chiffres</li>
+            <li>Vérifier les déclarations de dirigeants industriels</li>
+            <li>Contrôler les statistiques gouvernementales</li>
+            <li>Valider les données de production, d'investissement ou d'emploi</li>
+        </ul>
+    </div>
+    
+    <div class="example-box">
+        <div class="example-label">Comment l'utiliser</div>
+        <div class="text" style="font-style: italic;">
+            « Utilise le fact-checker depuis github.com/nizarezz/idm-skills pour vérifier cette affirmation: [votre affirmation ici] »
+        </div>
+    </div>
+    
+    <div class="content-block">
+        <div class="label">Ce que vous obtenez</div>
+        <ul>
+            <li>Affirmation extraite et classifiée</li>
+            <li>Sources primaires consultées (ONPIMC, HCP, AMIF, etc.)</li>
+            <li>Niveau de vérification (Vrai, Plutôt vrai, Mi-vrai, Plutôt faux, Faux, Faux grotesque)</li>
+            <li>Modèle de correction trilingue</li>
+        </ul>
+    </div>
+</div>
+
+<!-- SOURCE VERIFICATION -->
+<div class="content-page">
+    <div class="page-header">Guide des Compétences IDM — Compétences éditoriales</div>
+    
+    <div class="section-title">2. Source Verification</div>
+    
+    <div class="content-block">
+        <div class="label">À quoi ça sert</div>
+        <div class="text">Évaluer si une source est fiable et digne de confiance.</div>
+    </div>
+    
+    <div class="content-block">
+        <div class="label">Quand l'utiliser</div>
+        <ul>
+            <li>Recevoir une information d'un source inconnue</li>
+            <li>Évaluer un communiqué de presse d'une entreprise</li>
+            <li>Vérifier la crédibilité d'un expert interviewé</li>
+            <li>Déterminer si une source secondaire est utilisable</li>
+        </ul>
+    </div>
+    
+    <div class="example-box">
+        <div class="example-label">Comment l'utiliser</div>
+        <div class="text" style="font-style: italic;">
+            « Évalue cette source avec le skill source-verification: [description ou lien de la source] »
+        </div>
+    </div>
+    
+    <div class="content-block">
+        <div class="label">Ce que vous obtenez</div>
+        <ul>
+            <li>Score de fiabilité (1-10)</li>
+            <li>Type de source (primaire, secondaire, tertiaire)</li>
+            <li>Biais potentiels identifiés</li>
+            <li>Recommandation d'utilisation</li>
+        </ul>
+    </div>
+</div>
+
+<!-- AI WRITING DETOX -->
+<div class="content-page">
+    <div class="page-header">Guide des Compétences IDM — Compétences éditoriales</div>
+    
+    <div class="section-title">3. AI Writing Detox</div>
+    
+    <div class="content-block">
+        <div class="label">À quoi ça sert</div>
+        <div class="text">Éliminer les tics de langage de l'IA dans un texte rédigé.</div>
+    </div>
+    
+    <div class="content-block">
+        <div class="label">Quand l'utiliser</div>
+        <ul>
+            <li>Réviser un texte généré par ChatGPT, Claude ou autre IA</li>
+            <li>Nettoyer un texte avant publication</li>
+            <li>Supprimer les mots interdits en français, arabe et anglais</li>
+            <li>Rendre un texte plus naturel et journalistique</li>
+        </ul>
+    </div>
+    
+    <div class="content-block">
+        <div class="label">Mots interdits en français</div>
+        <div class="text">
+            <span class="gold-accent">Dans le paysage</span> • 
+            <span class="gold-accent">En tant que</span> • 
+            <span class="gold-accent">Joue un rôle crucial</span> • 
+            <span class="gold-accent">De pointe</span> • 
+            <span class="gold-accent">Optimiser</span>
+        </div>
+    </div>
+    
+    <div class="example-box">
+        <div class="example-label">Comment l'utiliser</div>
+        <div class="text" style="font-style: italic;">
+            « Nettoie ce texte avec le skill ai-writing-detox: [coller votre texte] »
+        </div>
+    </div>
+    
+    <div class="content-block">
+        <div class="label">Ce que vous obtenez</div>
+        <ul>
+            <li>Liste des mots interdits trouvés</li>
+            <li>Remplacements suggérés</li>
+            <li>Texte nettoyé</li>
+            <li>Score de naturalité</li>
+        </ul>
+    </div>
+</div>
+
+<!-- NEWSROOM STYLE -->
+<div class="content-page">
+    <div class="page-header">Guide des Compétences IDM — Compétences éditoriales</div>
+    
+    <div class="section-title">4. Newsroom Style</div>
+    
+    <div class="content-block">
+        <div class="label">À quoi ça sert</div>
+        <div class="text">Appliquer le style éditorial d'Industrie du Maroc à un texte.</div>
+    </div>
+    
+    <div class="content-block">
+        <div class="label">Quand l'utiliser</div>
+        <ul>
+            <li>Rédiger un nouvel article</li>
+            <li>Réviser un texte existant pour le conformer au style IDM</li>
+            <li>Vérifier la ponctuation, les majuscules, l'orthographe des noms marocains</li>
+        </ul>
+    </div>
+    
+    <div class="content-block">
+        <div class="label">Règles clés</div>
+        <ul>
+            <li>Ponctuation française (deux points, guillemets français « »)</li>
+            <li>Majuscules aux institutions marocaines (ONPIMC, HCP, Ministère de l'Industrie)</li>
+            <li>Noms arabes en caractères arabes + translittération</li>
+            <li>Abréviations: ONPIMC, HCP, AMIF, ONEE, MASEN, etc.</li>
+        </ul>
+    </div>
+    
+    <div class="example-box">
+        <div class="example-label">Comment l'utiliser</div>
+        <div class="text" style="font-style: italic;">
+            « Applique le style newsroom IDM à ce texte: [coller votre texte] »
+        </div>
+    </div>
+</div>
+
+<!-- STORY ANGLE FINDER -->
+<div class="content-page">
+    <div class="page-header">Guide des Compétences IDM — Compétences éditoriales</div>
+    
+    <div class="section-title">5. Story Angle Finder</div>
+    
+    <div class="content-block">
+        <div class="label">À quoi ça sert</div>
+        <div class="text">Trouver des angles éditoriaux pour un sujet donné.</div>
+    </div>
+    
+    <div class="content-block">
+        <div class="label">Quand l'utiliser</div>
+        <ul>
+            <li>Débuter la couverture d'un nouveau secteur industriel</li>
+            <li>Trouver une approche originale pour un sujet traité par d'autres médias</li>
+            <li>Générer des idées pour un dossier thématique</li>
+            <li>Préparer un pitch à la rédaction</li>
+        </ul>
+    </div>
+    
+    <div class="example-box">
+        <div class="example-label">Comment l'utiliser</div>
+        <div class="text" style="font-style: italic;">
+            « Trouve des angles éditoriaux sur [votre sujet] avec le skill story-angle-finder »
+        </div>
+    </div>
+    
+    <div class="content-block">
+        <div class="label">Ce que vous obtenez</div>
+        <ul>
+            <li>6-8 angles éditoriaux structurés</li>
+            <li>Pour chaque angle: titre, accroche, sources potentielles, cible lecteur</li>
+            <li>Différenciation par rapport aux concurrents</li>
+        </ul>
+    </div>
+</div>
+
+<!-- ARTICLE BUILDER -->
+<div class="content-page">
+    <div class="page-header">Guide des Compétences IDM — Compétences éditoriales</div>
+    
+    <div class="section-title">6. Article Builder</div>
+    
+    <div class="content-block">
+        <div class="label">À quoi ça sert</div>
+        <div class="text">Construire un article structuré à partir de notes et de recherches.</div>
+    </div>
+    
+    <div class="content-block">
+        <div class="label">Quand l'utiliser</div>
+        <ul>
+            <li>Rédiger un article à partir de vos prises de notes</li>
+            <li>Structurer un dossier complexe</li>
+            <li>Transformer des informations brutes en texte publication</li>
+            <li>Créer un article de fond ou une analyse sectorielle</li>
+        </ul>
+    </div>
+    
+    <div class="example-box">
+        <div class="example-label">Comment l'utiliser</div>
+        <div class="text" style="font-style: italic;">
+            « Construis un article avec le skill article-builder: [coller vos notes et informations] »
+        </div>
+    </div>
+    
+    <div class="content-block">
+        <div class="label">Ce que vous obtenez</div>
+        <ul>
+            <li>Article structuré avec titres et sous-titres</li>
+            <li>Introduction, développement, conclusion</li>
+            <li>Citations intégrées</li>
+            <li>Sources listées</li>
+        </ul>
+    </div>
+</div>
+
+<!-- INTERVIEW PREP -->
+<div class="content-page">
+    <div class="page-header">Guide des Compétences IDM — Compétences éditoriales</div>
+    
+    <div class="section-title">7. Interview Prep</div>
+    
+    <div class="content-block">
+        <div class="label">À quoi ça sert</div>
+        <div class="text">Préparer une interview d'un dirigeant industriel ou institutionnel.</div>
+    </div>
+    
+    <div class="content-block">
+        <div class="label">Quand l'utiliser</div>
+        <ul>
+            <li>Avant d'interviewer un PDG, DG ou responsable ministériel</li>
+            <li>Préparer des questions ciblées par secteur</li>
+            <li>Anticiper les réponses et préparer des relances</li>
+        </ul>
+    </div>
+    
+    <div class="example-box">
+        <div class="example-label">Comment l'utiliser</div>
+        <div class="text" style="font-style: italic;">
+            « Prépare une interview avec le skill interview-prep: [nom de la personne, poste, secteur] »
+        </div>
+    </div>
+    
+    <div class="content-block">
+        <div class="label">Ce que vous obtenez</div>
+        <ul>
+            <li>Profil de l'interviewé (recherche web)</li>
+            <li>10-15 questions organisées par thème</li>
+            <li>Questions de relance</li>
+            <li>Points de vérification post-interview</li>
+        </ul>
+    </div>
+</div>
+
+<!-- PRE-PUBLICATION REVIEW -->
+<div class="content-page">
+    <div class="page-header">Guide des Compétences IDM — Compétences éditoriales</div>
+    
+    <div class="section-title">8. Pre-Publication Review</div>
+    
+    <div class="content-block">
+        <div class="label">À quoi ça sert</div>
+        <div class="text">Revue finale structurée avant publication.</div>
+    </div>
+    
+    <div class="content-block">
+        <div class="label">Quand l'utiliser</div>
+        <ul>
+            <li>24 heures avant la publication</li>
+            <li>Revue de dernière minute par l'éditeur</li>
+            <li>Vérification complète avant un numéro spécial</li>
+        </ul>
+    </div>
+    
+    <div class="content-block">
+        <div class="label">Ce que vous vérifiez (3 couches)</div>
+        <ol>
+            <li><strong>Couche 1:</strong> Faits et chiffres (noms, titres, données)</li>
+            <li><strong>Couche 2:</strong> Style et rédaction (ponctuation, grammaire, ton)</li>
+            <li><strong>Couche 3:</strong> Légal et éthique (droit de réponse, diffamation, sources)</li>
+        </ol>
+    </div>
+    
+    <div class="example-box">
+        <div class="example-label">Comment l'utiliser</div>
+        <div class="text" style="font-style: italic;">
+            « Revue pré-publication avec le skill pre-publication-review: [coller l'article] »
+        </div>
+    </div>
+    
+    <div class="content-block">
+        <div class="label">Ce que vous obtenez</div>
+        <ul>
+            <li>Liste de contrôle complète (150+ points)</li>
+            <li>Erreurs classifiées par criticité (Critique/Élevée/Moyenne/Basse)</li>
+            <li>Recommandations spécifiques avec corrections</li>
+        </ul>
+    </div>
+</div>
+
+<!-- EMPLOYEE TOOLS -->
+<div class="content-page">
+    <div class="page-header">Guide des Compétences IDM — Outils employés</div>
+    
+    <div class="section-title">Outils employés</div>
+    
+    <div class="subsection-title">9. Newsletter Builder</div>
+    <div class="content-block">
+        <div class="label">À quoi ça sert</div>
+        <div class="text">Créer des newsletters B2B professionnelles pour l'industrie.</div>
+    </div>
+    
+    <div class="example-box">
+        <div class="example-label">Comment l'utiliser</div>
+        <div class="text" style="font-style: italic;">
+            « Crée une newsletter avec le skill newsletter-builder: [sujets à couvrir cette semaine] »
+        </div>
+    </div>
+    
+    <div class="subsection-title">10. Content Repurposer</div>
+    <div class="content-block">
+        <div class="label">À quoi ça sert</div>
+        <div class="text">Transformer un article en formats multiples (LinkedIn, Twitter, Instagram, vidéo).</div>
+    </div>
+    
+    <div class="example-box">
+        <div class="example-label">Comment l'utiliser</div>
+        <div class="text" style="font-style: italic;">
+            « Réutilise cet article avec le skill content-repurposer: [coller l'article ou lien] »
+        </div>
+    </div>
+    
+    <div class="subsection-title">11. Social Media Publisher</div>
+    <div class="content-block">
+        <div class="label">À quoi ça sert</div>
+        <div class="text">Créer du contenu optimisé pour les réseaux sociaux professionnels.</div>
+    </div>
+    
+    <div class="example-box">
+        <div class="example-label">Comment l'utiliser</div>
+        <div class="text" style="font-style: italic;">
+            « Prépare du contenu social avec le skill social-media-publisher: [sujet ou article] »
+        </div>
+    </div>
+    
+    <div class="subsection-title">12. Press Release Analyzer</div>
+    <div class="content-block">
+        <div class="label">À quoi ça sert</div>
+        <div class="text">Analyser et évaluer un communiqué de presse reçu.</div>
+    </div>
+    
+    <div class="example-box">
+        <div class="example-label">Comment l'utiliser</div>
+        <div class="text" style="font-style: italic;">
+            « Analyse ce communiqué avec le skill press-release-analyzer: [coller le communiqué] »
+        </div>
+    </div>
+    
+    <div class="subsection-title">13. Editorial Translation</div>
+    <div class="content-block">
+        <div class="label">À quoi ça sert</div>
+        <div class="text">Traduire du contenu entre français, arabe et anglais avec terminologie industrielle.</div>
+    </div>
+    
+    <div class="example-box">
+        <div class="example-label">Comment l'utiliser</div>
+        <div class="text" style="font-style: italic;">
+            « Traduis cet article en arabe avec le skill editorial-translation: [coller l'article] »
+        </div>
+    </div>
+</div>
+
+<!-- PRODUCTION TOOL -->
+<div class="content-page">
+    <div class="page-header">Guide des Compétences IDM — Production</div>
+    
+    <div class="section-title">14. PDF Media Kit Builder</div>
+    
+    <div class="content-block">
+        <div class="label">À quoi ça sert</div>
+        <div class="text">Créer des documents PDF professionnels et brandés.</div>
+    </div>
+    
+    <div class="content-block">
+        <div class="label">Quand l'utiliser</div>
+        <ul>
+            <li>Créer un dossier de presse</li>
+            <li>Préparer une présentation sectorielle</li>
+            <li>Générer un rapport annuel condensé</li>
+            <li>Produire une fiche technique entreprise</li>
+        </ul>
+    </div>
+    
+    <div class="content-block">
+        <div class="label">Types de documents</div>
+        <ul>
+            <li>Dossier de presse (communiqué + photos + contacts)</li>
+            <li>Fiche entreprise (profil, données financières, contacts)</li>
+            <li>Rapport sectoriel (statistiques, tendances, prévisions)</li>
+            <li>Présentation événement (programme, intervenants, logistique)</li>
+        </ul>
+    </div>
+    
+    <div class="example-box">
+        <div class="example-label">Comment l'utiliser</div>
+        <div class="text" style="font-style: italic;">
+            « Crée un PDF avec le skill pdf-media-kit-builder: [type de document et contenu] »
+        </div>
+    </div>
+</div>
+
+<!-- WORKFLOWS -->
+<div class="content-page">
+    <div class="page-header">Guide des Compétences IDM — Workflows</div>
+    
+    <div class="section-title">Workflows combinés</div>
+    
+    <div class="subsection-title">Workflow Article Complet</div>
+    <div class="workflow-box">
+        <span class="workflow-step">1. Story Angle Finder</span> <span class="workflow-arrow">→</span> Trouver l'angle<br>
+        <span class="workflow-step">2. Interview Prep</span> <span class="workflow-arrow">→</span> Préparer les interviews<br>
+        <span class="workflow-step">3. [Conduire les interviews]</span><br>
+        <span class="workflow-step">4. Article Builder</span> <span class="workflow-arrow">→</span> Rédiger l'article<br>
+        <span class="workflow-step">5. AI Writing Detox</span> <span class="workflow-arrow">→</span> Nettoyer le texte<br>
+        <span class="workflow-step">6. Newsroom Style</span> <span class="workflow-arrow">→</span> Appliquer le style IDM<br>
+        <span class="workflow-step">7. Fact Checker</span> <span class="workflow-arrow">→</span> Vérifier les claims<br>
+        <span class="workflow-step">8. Pre-Publication Review</span> <span class="workflow-arrow">→</span> Revue finale<br>
+        <span class="workflow-step">9. Publication</span>
+    </div>
+    
+    <div class="subsection-title">Workflow Social Media</div>
+    <div class="workflow-box">
+        <span class="workflow-step">1. Article publié</span> <span class="workflow-arrow">→</span> <span class="workflow-step">2. Content Repurposer</span> <span class="workflow-arrow">→</span> <span class="workflow-step">3. Social Media Publisher</span>
+    </div>
+    
+    <div class="subsection-title">Workflow Multilingue</div>
+    <div class="workflow-box">
+        <span class="workflow-step">1. Article en français</span> <span class="workflow-arrow">→</span> <span class="workflow-step">2. Editorial Translation</span> <span class="workflow-arrow">→</span> <span class="workflow-step">3. Version arabe</span><br>
+        <span class="workflow-arrow">→</span> <span class="workflow-step">4. Editorial Translation</span> <span class="workflow-arrow">→</span> <span class="workflow-step">5. Version anglaise</span><br>
+        <span class="workflow-arrow">→</span> <span class="workflow-step">6. Pre-Publication Review</span> <span class="workflow-arrow">→</span> <span class="workflow-step">7. Publication trilingue</span>
+    </div>
+</div>
+
+<!-- MOROCCAN DATA SOURCES -->
+<div class="content-page">
+    <div class="page-header">Guide des Compétences IDM — Sources</div>
+    
+    <div class="section-title">Sources de données marocaines</div>
+    
+    <div class="content-block">
+        <div class="text">
+            Toutes les compétences utilisent ces sources officielles pour la vérification des données industrielles au Maroc.
+        </div>
+    </div>
+    
+    <table class="sources-table">
+        <thead>
+            <tr>
+                <th style="width: 25%;">Source</th>
+                <th style="width: 45%;">Données</th>
+                <th style="width: 30%;">Site</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>HCP</td><td>Statistiques industrielles, emploi, PIB</td><td>hcp.ma</td></tr>
+            <tr><td>ONPIMC</td><td>Commerce extérieur, exportations/importations</td><td>onpimc.org</td></tr>
+            <tr><td>AMIF</td><td>Investissements étrangers</td><td>amif.ma</td></tr>
+            <tr><td>ONHYM</td><td>Hydrocarbures, mines, énergies renouvelables</td><td>onhym.ma</td></tr>
+            <tr><td>MASEN</td><td>Énergie solaire et renouvelable</td><td>masen.ma</td></tr>
+            <tr><td>ONEE</td><td>Électricité et eau</td><td>onee.ma</td></tr>
+            <tr><td>CRI</td><td>Investissements</td><td>cri.ma</td></tr>
+            <tr><td>Ministère de l'Industrie</td><td>Politiques, réglementations</td><td>mi.gov.ma</td></tr>
+            <tr><td>CNSS</td><td>Sécurité sociale, emplois déclarés</td><td>cnss.ma</td></tr>
+            <tr><td>EXTT (Office des Changes)</td><td>Statistiques de commerce extérieur</td><td>extt.ma</td></tr>
+        </tbody>
+    </table>
+    
+    <div style="margin-top: 2cm; padding-top: 0.5cm; border-top: 2px solid #CC9900; text-align: center;">
+        <div style="font-size: 10pt; color: #666666;">
+            Guide des compétences IDM — Industrie du Maroc Magazine<br>
+            Version 1.0.0 — 13 juillet 2026
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
