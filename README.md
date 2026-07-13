@@ -4,7 +4,7 @@
 
 This catalogue contains AI-assisted skills adapted for Industrie du Maroc Magazine's industrial journalism needs. Each skill is a self-contained Markdown prompt that can be used in Claude, ChatGPT, or any AI assistant.
 
-**Total skills:** 14 skills + 2 reference documents
+**Total skills:** 15 skills + 2 reference documents
 **Languages:** French, Arabic, English
 **License:** MIT (adapted from open-source repositories)
 
@@ -104,12 +104,17 @@ Add the skill path to your project's configuration so it loads automatically.
 
 ---
 
-## Production Tools (1)
+## Production Tools (2)
 
 ### 14. PDF & Media Kit Builder
 **File:** `production/pdf-media-kit-builder/SKILL.md`
 **Use when:** Creating branded PDF documents, reports, and media kits
 **Adapted from:** anthropics/skills
+
+### 15. Presentation Builder
+**File:** `production/presentation-builder/SKILL.md`
+**Use when:** Creating professional HTML presentations, industrial reports, company profiles, event materials
+**Adapted from:** ppt-agent-skill
 
 ---
 
@@ -166,6 +171,8 @@ Final Article
         ↓
 PDF/Media Kit Builder → Branded documents
         ↓
+Presentation Builder → Professional slides
+        ↓
 Distribution to stakeholders
 ```
 
@@ -182,6 +189,7 @@ These skills were adapted from the following open-source repositories:
 | ComposioHQ/awesome-claude-skills | MIT | Article builder |
 | coreyhaines31/marketingskills | MIT | Social media publisher |
 | anthropics/skills | MIT | PDF/media kit builder |
+| ppt-agent-skill | MIT | Presentation builder |
 
 ---
 
