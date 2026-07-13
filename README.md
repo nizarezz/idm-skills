@@ -10,6 +10,14 @@ This catalogue contains AI-assisted skills adapted for Industrie du Maroc Magazi
 
 ---
 
+## Guide en français
+
+**[Guide des Compétences IDM →](GUIDE-COMPETENCES.md)**
+
+Comment et quand utiliser chaque compétence — en français pour les employés.
+
+---
+
 ## How to Use These Skills
 
 ### Option 1: Copy and Paste
